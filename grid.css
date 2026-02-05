@@ -1,0 +1,32 @@
+.parent {
+display: grid;
+grid-template-columns: repeat(5, 1fr);
+grid-template-rows: repeat(5, 1fr);
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+}
+
+/* ปรับแต่งสไตล์กล่องสีขาวให้เหมือนในรูป */
+.parent > div {
+    background-color: rgb(119, 67, 0);
+    border-radius: 10px;    /* มุมโค้ง */
+    border: 2px solid #333; /* ขอบเข้ม */
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    position: relative; */
+}
+
+.div1 { grid-area: 1 / 2 / 3 / 3; }
+.div2 { grid-area: 3 / 2 / 4 / 3; }
+.div3 { grid-area: 1 / 3 / 3 / 5; }
+.div4 { grid-area: 3 / 3 / 4 / 5; }
+
+.div2_info {
+    color: white;
+    margin: 10px;
+}
+.div2_NBL {
+    margin-left: 12px;
+}
