@@ -7,7 +7,12 @@
     text-align: center;
     background-color: black;
     color: white;
-    margin: 50px;
     padding: 20px;
     text-decoration: none;
+
+}
+
+.navbar2 {
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
