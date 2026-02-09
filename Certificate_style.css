@@ -1,85 +1,154 @@
-/* 1. จัดแถวละ 3 ใบ */
+/* =========================================
+   ส่วนเสริมสำหรับหน้า Certificate (วางต่อท้ายสุด)
+   ========================================= */
+
+/* 1. คอนเทนเนอร์หลักของหน้า Certificate */
 .certificate-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* แถวละ 3 ใบเท่าๆ กัน */
-    gap: 40px; /* เพิ่มระยะห่างเพื่อให้มีที่ว่างตอนกล่องเด้ง */
-    padding: 50px;
-    transition: 0.3s;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;
+    max-width: 95%;
+    padding: 0 20px;
+    /* perspective: 1000px; */
 }
 
-/* 2. สไตล์ของตัวการ์ด */
+/* 2. การ์ดแต่ละใบ */
 .cert-card {
-    position: relative; /* เพื่อให้ detail-box อ้างอิงพิกัดจากตัวการ์ด */
-    display: flex;
-    align-items: center;
-    transition: 0.5s;
+    position: relative;
+    border-radius: 15px;
+    transition: 0.5s ease;
+    /* ไม่ใส่ Background เพื่อโชว์รูปเต็มๆ หรือจะใส่สีดำก็ได้ */
 }
 
-/* 3. เอฟเฟกต์ขยายรูปภาพ */
+/* เอฟเฟกต์รูปภาพ */
 .img-wrapper {
     width: 100%;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    transition: 0.5s ease-in-out;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5); /* เงาเข้มขึ้นเพื่อให้เข้ากับ Dark Mode */
+    border: 1px solid #333;
+    transition: 0.5s ease;
+    aspect-ratio: 4/3; /* บังคับสัดส่วนภาพให้เท่ากันทุกใบ */
 }
 
 .img-wrapper img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
     display: block;
     transition: 0.5s;
 }
 
+/* Hover: ขยายรูป */
 .cert-card:hover .img-wrapper {
-    transform: scale(1.15); /* ขยายรูปภาพขึ้น */
-    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    transform: scale(1.05);
+    border-color: #4facfe; /* ขอบสีฟ้า */
+    box-shadow: 0 10px 30px rgba(79, 172, 254, 0.3); /* เงาสีฟ้าเรืองแสง */
+    z-index: 10;
 }
 
-/* 4. กล่องข้อความเด้งข้างๆ (Detail Box) */
+/* 3. กล่องข้อความเด้ง (ปรับสีให้เข้ากับธีมมืด) */
 .detail-box {
     position: absolute;
-    left: 80%; /* ให้เริ่มโผล่จากด้านขวาของรูป */
-    width: 200px;
-    background: white;
+    left: 85%;
+    top: 10%;
+    width: 220px;
+    background: rgba(30, 30, 30, 0.95); /* สีดำโปร่งแสง */
+    backdrop-filter: blur(10px);
     padding: 20px;
-    border-radius: 15px;
-    box-shadow: 10px 10px 30px rgba(0,0,0,0.2);
-    opacity: 0; /* ซ่อนไว้ */
+    border-radius: 12px;
+    border: 1px solid #4facfe;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    
+    opacity: 0;
     visibility: hidden;
-    transform: translateX(20px); /* ดันไปทางขวาหน่อยๆ */
-    transition: 0.4s all ease-out;
+    transform: translateX(10px);
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* เด้งดึ๋งแบบสปริง */
     z-index: 100;
+    pointer-events: none; /* เพื่อไม่ให้เมาส์ไปโดนกล่องแล้วกระตุก */
 }
 
-/* 5. เมื่อ Hover: แสดงกล่องข้อความ */
+.detail-box h4 {
+    color: #4facfe;
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+}
+
+.detail-box p {
+    color: #ddd;
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.tag {
+    display: inline-block;
+    background: #4facfe;
+    color: #000;
+    font-size: 0.7rem;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+/* Hover: แสดงกล่อง */
 .cert-card:hover .detail-box {
     opacity: 1;
     visibility: visible;
-    transform: translateX(100px); /* เด้งออกไปข้างๆ */
+    transform: translateX(20px);
 }
 
-/* 6. เอฟเฟกต์รอบๆ เบลอ (จากอันเก่าที่เราคุยกัน) */
-/* .certificate-container:hover .cert-card:not(:hover) {
-    filter: blur(5px);
-    opacity: 0.6;
-} */
-
-/* เลือกเฉพาะการ์ดตัวที่ 3, 6, 9... (ตัวขวาสุด) */
+/* 4. สามเหลี่ยมชี้ (Arrow) */
+.detail-box::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 20px;
+    border-width: 8px 8px 8px 0;
+    border-style: solid;
+    border-color: transparent #4facfe transparent transparent; /* เปลี่ยนสีตามขอบ */
+}
+/* 5. แก้ไขตัวริมขวา (ใบที่ 3, 6, 9...) ให้เด้งไปทางซ้าย */
 .cert-card:nth-child(3n) .detail-box {
-    left: auto;            /* ยกเลิกการชิดซ้ายเดิม */
-    right: 80%;           /* ให้ดีดมาเริ่มจากทางขวาแทน */
-    transform: translateX(-80px); /* ดันไปทางซ้ายรอไว้ */
+    left: auto;
+    right: 85%;
+    transform: translateX(-10px);
 }
-
-/* ปรับตำแหน่งตอน Hover สำหรับตัวขวาสุด */
 .cert-card:nth-child(3n):hover .detail-box {
-    transform: translateX(-40px); /* เด้งออกไปทางซ้ายแทน */
+    transform: translateX(-20px);
 }
 
-/* ย้าย "ติ่งสามเหลี่ยม" มาไว้ฝั่งขวาของกล่อง */
 .cert-card:nth-child(3n) .detail-box::before {
     left: auto;
-    right: -10px; /* ย้ายไปอยู่ขอบขวาของกล่องข้อความ */
-    border-width: 10px 0 10px 10px; /* กลับด้านสามเหลี่ยม */
-    border-color: transparent transparent transparent white;
+    right: -8px;
+    border-width: 8px 0 8px 8px;
+    border-color: transparent transparent transparent #4facfe;
 }
+
+/* 6. Responsive สำหรับมือถือ (เหลือ 1 คอลัมน์) */
+@media (max-width: 900px) {
+    .certificate-container {
+        grid-template-columns: 1fr; /* เรียงแถวเดียว */
+        padding: 0 20px;
+    }
+
+    /* บนมือถือ ให้กล่องข้อความเด้งลงมาข้างล่างแทน (เพราะไม่มีที่ด้านข้าง) */
+    .detail-box, .cert-card:nth-child(3n) .detail-box {
+        left: 0;
+        right: 0;
+        top: 100%; /* อยู่ใต้รูป */
+        width: 100%; /* กว้างเต็ม */
+        margin-top: 10px;
+        transform: translateY(-10px);
+        background: #1e1e1e;
+    }
+    
+    .cert-card:hover .detail-box, .cert-card:nth-child(3n):hover .detail-box {
+        transform: translateY(0);
+    }
+    
+    .detail-box::before {
+        display: none; /* ซ่อนลูกศร */
+    }
+}
+
