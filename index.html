@@ -3,63 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About_kittiphong</title>
-
-    <link rel="stylesheet" href="navbar.css">
-    <link rel="stylesheet" href="grid.css">
-
-
+    <title>About Kittiphong</title>
+    <link rel="stylesheet" href="grid2.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body class="body">
     
-    <header class="container">
-        <h1 class="background_header">Welcome  to  Kittiphong's profile</h1>
-    </header>
     <nav class="navbar">
-
-        <a href="index.html" class = "navbar2" ><strong>Home</strong></a>
-        <a href="Project.html" class = "navbar2"><strong>Project</strong></a>
-        <a href="Certificate.html" class = "navbar2"><strong>Certificate</strong></a>
-
+        <div class="nav-brand">Kittiphong.Profile</div>
+        <div class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="Project.html">Projects</a>
+            <a href="Certificate.html">Certificates</a>
+        </div>
     </nav>
+
+    <header class="container">
+        <h1>Welcome to <span class="highlight">Kittiphong's</span> Profile</h1>
+        <p class="subtitle">Computer & Robotics Engineering Student</p>
+    </header>
+
     <div class="parent">
-        <div class="div1">
-            <img width= 100% height=100% src="image\17663255326191.jpg" alt="">
-        </div>
-        <div class="div2">
-            <div>
-                <div class="div_info">
-                    <strong>Personal information</strong><br>
-                    <div class="div_NBL">
-                        <br>Name : Kittiphong Mongthaisong <br>
-                        <br>Date of Birth : 11 March 2005 <br>
-                        <br>Location : Samut Prakan, Phra Pradaeng <br>
-                        <br>University : Bangkok University <br>
-                        <br>Major : Computer and Robotics Engineering
-
-                    </div>
-                </div>
+        <div class="div1 card">
+            <div class="img-container">
+                <img src="image/17663255326191.jpg" alt="Kittiphong Profile">
             </div>
         </div>
-        <div class="div3">
-            <div class="div_info">
-                <strong class="div_text">About me</strong><br>
-                <div class="div_content_text">
-                    <br>
-                    I am a 3rd-year Computer Engineering student at Bangkok University with a strong <br><br>
-                    passion for Industrial Automation and Embedded Systems. Throughout my studies, <br><br> 
-                    I have gained hands-on experience in PCB design, specifically utilizing NXP K64F and <br><br> 
-                    ESP32 microcontrollers. I also possess a solid understanding of PLC Programming and <br><br> 
-                    Ladder Logic, with a focus on optimizing production efficiency. By integrating these <br><br> hardware foundations with AI and Neural Networks 
-                    <br><br><br><br><br><br><br><br> Currently, I am seeking an internship opportunity where I can contribute to complex <br><br> engineering projects and learn from industry leaders in Process Automation 
-                </div>
+
+        <div class="div2 card">
+            <h2>Personal Information</h2>
+            <div class="info-grid">
+                <p><strong>Name:</strong> Kittiphong Mongthaisong</p>
+                <p><strong>Age:</strong> 20 Years old (11 March 2005)</p>
+                <p><strong>Location:</strong> Samut Prakan, Phra Pradaeng</p>
+                <p><strong>University:</strong> Bangkok University</p>
+                <p><strong>Major:</strong> Computer and Robotics Engineering</p>
             </div>
         </div>
-        <div class="div4">4
 
+        <div class="div3 card">
+            <h2>About Me</h2>
+            <div class="content-text">
+                <p>
+                    I am a 3rd-year Computer Engineering student at Bangkok University with a strong 
+                    passion for <strong>Industrial Automation</strong> and <strong>Embedded Systems</strong>.
+                </p>
+                <p>
+                    Throughout my studies, I have gained hands-on experience in <strong>PCB design</strong>, 
+                    specifically utilizing NXP K64F and ESP32 microcontrollers. I also possess a solid understanding 
+                    of <strong>PLC Programming</strong> and Ladder Logic, with a focus on optimizing production efficiency.
+                </p>
+                <p>
+                    Currently, I am seeking an internship opportunity to contribute to complex engineering projects 
+                    and learn from industry leaders in Process Automation.
+                </p>
+            </div>
+        </div>
+
+        <div class="div4 card">
+            <h2>Technical Skills</h2>
+            <div class="skills-container">
+                <span class="skill-tag">C/C++</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">PLC</span>
+                <span class="skill-tag">PCB Design</span>
+                <span class="skill-tag">HTML/CSS</span>
+                <span class="skill-tag">Git/GitHub</span>
+            </div>
         </div>
     </div>
 
-
 </body>
+</html>
 </html>

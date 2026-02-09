@@ -5,16 +5,11 @@ grid-template-rows: repeat(5, 1fr);
 grid-column-gap: 0px;
 grid-row-gap: 0px;
 }
-/* ปรับแต่งสไตล์กล่องสีขาวให้เหมือนในรูป */
+
 .parent > div {
     background-color: rgb(119, 67, 0);
-    border-radius: 10px;    /* มุมโค้ง */
-    border: 2px solid #333; /* ขอบเข้ม */
-    /* display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2rem;
-    position: relative; */
+    border-radius: 10px;    
+    border: 2px solid #333; 
 }
 
 body {
@@ -41,6 +36,3 @@ body {
     font-size: large;
 }
 
-.background_header {
-
-}
