@@ -5,7 +5,6 @@ grid-template-rows: repeat(5, 1fr);
 grid-column-gap: 0px;
 grid-row-gap: 0px;
 }
-
 /* ปรับแต่งสไตล์กล่องสีขาวให้เหมือนในรูป */
 .parent > div {
     background-color: rgb(119, 67, 0);
@@ -18,15 +17,30 @@ grid-row-gap: 0px;
     position: relative; */
 }
 
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 .div1 { grid-area: 1 / 2 / 3 / 3; }
 .div2 { grid-area: 3 / 2 / 4 / 3; }
 .div3 { grid-area: 1 / 3 / 3 / 5; }
 .div4 { grid-area: 3 / 3 / 4 / 5; }
 
-.div2_info {
+.div_info {
     color: white;
     margin: 10px;
 }
-.div2_NBL {
+.div_NBL {
     margin-left: 12px;
+}
+
+.div_text {
+    font-size: larger;
+}
+.div_content_text {
+    font-size: large;
+}
+
+.background_header {
+
 }
