@@ -6,6 +6,7 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="grid2.css">
+    <link rel="stylesheet" href="Project.css">
     
 </head>
 <body class="body">
@@ -14,8 +15,99 @@
         <div class="nav-links">
             <a href="index.html">Home</a>
             <a href="Project.html"  class="active" >Projects</a>
-            <a href="Certificate.html">Certificates</a>
+            <a href="Certificate.html">Certificates</a>           
         </div>
     </nav>
+
+    <header class="container">
+        <h1>Recent <span class="highlight">Projects</span></h1>
+        <p class="subtitle">Showcase of my engineering & coding works</p>
+    </header>
+
+    <div class="project-container">
+        
+        <div class="project-card">
+            <div class="project-img">
+                <img src="image/sensor_project.jpg" alt="PCB Project">
+            </div>
+            <div class="project-info">
+                <h3>Smart detect room status </h3>
+                <div class="tech-stack">
+                    <span>Arduino nano</span>
+                    <span>PCB Design</span>
+                    <span>IoT</span>
+                </div>
+                <p>ออกแบบแผ่นวงจร PCB สำหรับใช้ sensors ในการตรวจจับสถานะห้องและทำการส่งข้อมูลไปที่ Microcontroller อีกตัวเพื่อแสดงสถานะขึ้นคอมพิวเตอร์</p>
+                <div class="btn-group">
+                    <a href="#" class="btn primary">
+                        <i class="fas fa-external-link-alt"></i> View Demo
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-img">
+                <img src="image/Elephant_cnn.jpg" alt="AI Project">
+            </div>
+            <div class="project-info">
+                <h3>Elephants Identification (CNN)</h3>
+                <div class="tech-stack">
+                    <span>CNN</span>
+                    <span>Object Detection</span>
+                    <span>Tensorflow</span>
+                    <span>Programming</span>
+                </div>
+                <p>โปรแกรมสำหรับคัดแยกหน้าช้างด้วย CNN ผ่านการใช้ Object Detection เพื่อให้ง่ายต่อการคัดแยกเพิ่มมากขึ้น</p>
+                <div class="btn-group">
+                    <a href="https://colab.research.google.com/drive/1lwzI4mPuJqwlVHGSNWitN-zZAchxJBYI?usp=sharing" target="_blank"  class="btn primary">
+                        <i class="fab fa-youtube"></i> View Code
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-img">
+                <img src="image/Obj-dect.jpg" alt="AI Project">
+            </div>
+            <div class="project-info">
+                <h3>Object Detection with YOLO</h3>
+                <div class="tech-stack">
+                    <span>Python</span>
+                    <span>OpenCV</span>
+                    <span>Deep Learning</span>
+                </div>
+                <p>โปรเจกต์ AI ตรวจจับช้างและแยกตัวตนใช้โมเดล YOLOv11 แต่เนื่องจากใช้แค่เรื่อง Object Detection ความถูกต้องเลยอยู่ที่ 23.81%</p>
+                <div class="btn-group">
+                    <a href="https://colab.research.google.com/drive/1R8eFYrRU6CdceC9IUep3Ch2CYBrjr0XI?usp=sharing" target="_blank" class="btn primary">
+                        <i class="fab fa-youtube"></i> View Code
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-img">
+                <img src="image/Skeleton.jpg" alt="AI Project">
+            </div>
+            <div class="project-info">
+                <h3>Skeleton Extraction with mediapipe</h3>
+                <div class="tech-stack">
+                    <span>Python</span>
+                    <span>OpenCV</span>
+                    <span>mediapipe</span>
+                    <span>Deep Learning</span>
+                </div>
+                <p>โปรเจกต์สำหรับระบุตัวบุคคลด้วย Skeleton Extraction </p>
+                <div class="btn-group">
+                    <a href="https://colab.research.google.com/drive/1uwLaQfKOuxBoAEvZSwDoR4DzW_MylIqj?usp=sharing" target="_blank" class="btn primary">
+                        <i class="fab fa-youtude"></i> View Code
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
 </body>
 </html>

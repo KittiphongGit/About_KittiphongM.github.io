@@ -1,0 +1,154 @@
+.project-container {
+    max-width: 1000px;
+    margin: 0 auto 50px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* ระยะห่างระหว่างแต่ละโปรเจกต์ */
+}
+
+/* 2. การ์ดโปรเจกต์ (รูปซ้าย-เนื้อหาขวา) */
+.project-card {
+    display: flex; /* จัดเรียงแนวนอน */
+    background-color: #1e1e1e; /* ใช้สีเดียวกับธีม Profile */
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid #333;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: #4facfe; /* ขอบเรืองแสงสีฟ้า */
+}
+
+/* ส่วนรูปภาพ (ซ้าย) */
+.project-img {
+    flex: 2; /* กินพื้นที่ 40% */
+    min-height: 250px;
+    position: relative;
+    overflow: hidden;
+    border-right: 1px solid #333; /* เส้นคั่นกลาง */
+}
+
+.project-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-img img {
+    transform: scale(1.1); /* ซูมรูปเมื่อชี้ */
+}
+
+/* ส่วนเนื้อหา (ขวา) */
+.project-info {
+    flex: 3; /* กินพื้นที่ 60% */
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.project-info h3 {
+    color: #4facfe;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.project-info p {
+    color: #ccc; /* สีตัวอักษรเทาอ่อน อ่านสบายตา */
+    font-size: 1rem;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* 3. ป้าย Tag บอกเทคโนโลยี (Tech Stack) */
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.tech-stack span {
+    background: rgba(79, 172, 254, 0.1);
+    color: #4facfe;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border: 1px solid rgba(79, 172, 254, 0.3);
+}
+
+/* 4. ปุ่มกด (Button Styles) */
+.btn-group {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+}
+
+/* ปุ่มหลัก (สีฟ้าไล่เฉด) */
+.btn.primary {
+    background: linear-gradient(45deg, #4facfe, #00f2fe);
+    color: #000;
+    border: none;
+    box-shadow: 0 4px 15px rgba(79, 172, 254, 0.3);
+}
+
+.btn.primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(79, 172, 254, 0.5);
+}
+
+/* ปุ่มรอง (ขอบขาวโปร่ง) */
+.btn.secondary {
+    background: transparent;
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+.btn.secondary:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: #fff;
+}
+
+/* 5. Responsive (มือถือ) */
+@media (max-width: 768px) {
+    .project-card {
+        flex-direction: column; /* เปลี่ยนเป็นแนวตั้ง */
+    }
+
+    .project-img {
+        width: 100%;
+        height: 200px; /* กำหนดความสูงให้แน่นอนในมือถือ */
+        flex: none;
+        border-right: none;
+        border-bottom: 1px solid #333;
+    }
+    
+    .project-info {
+        padding: 20px;
+    }
+
+    .btn-group {
+        flex-direction: column; /* ปุ่มเรียงลงมา */
+    }
+    
+    .btn {
+        justify-content: center; /* จัดตัวหนังสือกลางปุ่ม */
+    }
+}
